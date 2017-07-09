@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <#include "/common/headblock.html">
+    <title>我的简历库</title>
+  </head>
+  <body>
+    <@header />
+    
+    <div class="weui-cells" id="jinlis">
+      <a href="${BASE_URI}/ucsite/index.do?uid=1233" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <img src="${BASE_URI}/static/common/images/pic_160.png" style="width: 50px;display: block">
+        </div>
+        <div class="weui-cell__bd">
+          <p>张三</p>
+          <p style="font-size: 13px;color: #888888;">最近更新日期：2017-07-09</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+      </a>
+      <a href="${BASE_URI}/ucsite/index.do?uid=1233" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <img src="${BASE_URI}/static/common/images/pic_160.png" style="width: 50px;display: block">
+        </div>
+        <div class="weui-cell__bd">
+          <p>李四</p>
+          <p style="font-size: 13px;color: #888888;">最近更新日期：2017-07-09</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+      </a>
+      <a href="${BASE_URI}/ucsite/index.do?uid=1233" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <img src="${BASE_URI}/static/common/images/pic_160.png" style="width: 50px;display: block">
+        </div>
+        <div class="weui-cell__bd">
+          <p>张三</p>
+          <p style="font-size: 13px;color: #888888;">最近更新日期：2017-07-09</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+      </a>
+      <a href="${BASE_URI}/ucsite/index.do?uid=1233" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <img src="${BASE_URI}/static/common/images/pic_160.png" style="width: 50px;display: block">
+        </div>
+        <div class="weui-cell__bd">
+          <p>李四</p>
+          <p style="font-size: 13px;color: #888888;">最近更新日期：2017-07-09</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+      </a>
+      <a href="${BASE_URI}/ucsite/index.do?uid=1233" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <img src="${BASE_URI}/static/common/images/pic_160.png" style="width: 50px;display: block">
+        </div>
+        <div class="weui-cell__bd">
+          <p>张三</p>
+          <p style="font-size: 13px;color: #888888;">最近更新日期：2017-07-09</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+      </a>
+      <a href="${BASE_URI}/ucsite/index.do?uid=1233" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <img src="${BASE_URI}/static/common/images/pic_160.png" style="width: 50px;display: block">
+        </div>
+        <div class="weui-cell__bd">
+          <p>李四</p>
+          <p style="font-size: 13px;color: #888888;">最近更新日期：2017-07-09</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+      </a>
+      <a href="${BASE_URI}/ucsite/index.do?uid=1233" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <img src="${BASE_URI}/static/common/images/pic_160.png" style="width: 50px;display: block">
+        </div>
+        <div class="weui-cell__bd">
+          <p>张三</p>
+          <p style="font-size: 13px;color: #888888;">最近更新日期：2017-07-09</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+      </a>
+      <a href="${BASE_URI}/ucsite/index.do?uid=1233" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <img src="${BASE_URI}/static/common/images/pic_160.png" style="width: 50px;display: block">
+        </div>
+        <div class="weui-cell__bd">
+          <p>李四</p>
+          <p style="font-size: 13px;color: #888888;">最近更新日期：2017-07-09</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+      </a>
+    </div>
+    
+    <div class="weui-loadmore">
+      <i class="weui-loading"></i>
+      <span class="weui-loadmore__tips">正在加载</span>
+    </div>
+    
+    <div id="model" style="display:none;">
+      <a href="${BASE_URI}/ucsite/index.do?uid=1233" class="weui-cell weui-cell_access">
+        <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <img src="${BASE_URI}/static/common/images/pic_160.png" style="width: 50px;display: block">
+        </div>
+        <div class="weui-cell__bd">
+          <p>李四</p>
+          <p style="font-size: 13px;color: #888888;">最近更新日期：2017-07-09</p>
+        </div>
+        <div class="weui-cell__ft"></div>
+      </a>
+    </div>
+	
+	<script>
+      var loading = false;
+      $(document.body).infinite().on("infinite", function() {
+        if(loading) return;
+        loading = true;
+        setTimeout(function() {
+          $("#jinlis").append($("#model").html());
+          loading = false;
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

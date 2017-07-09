@@ -1,0 +1,36 @@
+<#macro header title="" left="" right="">
+<!-- 标题栏 -->
+<header class='base-header'>
+  ${left!}
+  ${right!}
+  <h1 class="base-title"><#if (title!"") != "">${title}<#else><script>$("header > h1.base-title").text(document.title ? document.title : "无标题")</script></#if></h1>
+</header>
+</#macro>
+
+<#macro nav activeIndex="0">
+<!-- 底层工具栏 -->
+<div class="weui-footer weui-footer_fixed-bottom">
+   <div class="weui-tabbar">
+	  <a href="${BASE_URI}/index.do" class='weui-tabbar__item ${(((activeIndex)!"0") == "0")?string("weui-bar__item--on", "")}'>
+	    <span class="weui-badge" style="position: relative;top: -1.8em;right: -3em;">8</span>
+	    <div class="weui-tabbar__icon">
+	      <img src="${BASE_URI}/static/common/images/icon_nav_button.png" alt="">
+	    </div>
+	    <p class="weui-tabbar__label">首页</p>
+	  </a>
+	  <a href="${BASE_URI}/relation/index.do" class='weui-tabbar__item ${(((activeIndex)!"0") == "1")?string("weui-bar__item--on", "")}'>
+	    <div class="weui-tabbar__icon">
+	      <img src="${BASE_URI}/static/common/images/icon_nav_msg.png" alt="">
+	    </div>
+	    <p class="weui-tabbar__label">人脉</p>
+	  </a>
+	  <a href="${BASE_URI}/uc/index.do" class='weui-tabbar__item ${(((activeIndex)!"0") == "2")?string("weui-bar__item--on", "")}'>
+	    <div class="weui-tabbar__icon">
+	      <img src="${BASE_URI}/static/common/images/icon_nav_cell.png" alt="">
+	    </div>
+	    <p class="weui-tabbar__label">我</p>
+	  </a>
+	</div>
+</div>
+
+</#macro>

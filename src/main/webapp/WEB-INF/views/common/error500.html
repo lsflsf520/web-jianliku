@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"   
+ "http://www.w3.org/TR/html4/loose.dtd">  
+<html>  
+    <head>  
+        <#include "/common/headblock.html">
+        <title>500-服务器出现错误</title>  
+    </head>  
+    <body>  
+       <fieldset class="layui-elem-field " style=" width:400px; margin:100px auto;">
+		  <legend style="font-size: 28px;color: #eb8531;">哎呦~ 系统居然累倒了!</legend>
+		  <div class="layui-field-box" style="padding: 20px; line-height: 30px;">
+		    <p>● 请及时向管理员反馈，错误代码：500。</p>
+		    <p>● 别急，工程师紧急处理，马上就能修好。</p>
+		    
+		    <div style="margin-left: 80px; margin-top: 50px;">
+		      <a class='tab-item external' href="${BASE_URI}/index.do">返回首页</a><span style="color:blue;" id="leftSec"></span>
+		    </div>
+		  </div>
+		</fieldset>
+		
+		<script>
+		  var startTime = new Date().getTime();
+		  var leftSecs = 5;
+		  $("#leftSec").text(leftSecs + "s");
+		  var indId=self.setInterval("goIndex()",1000);
+		  function goIndex() {
+		    --leftSecs; 
+		    if(leftSecs <= 0){
+		    	clearInterval(indId);
+		    	location.href='/index.do';
+		    } else {
+		    	$("#leftSec").text(leftSecs + "s");
+		    }
+		  }
+		</script>
+    </body>  
+</html>
