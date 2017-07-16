@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <#include "/common/headblock.html">
+    <title>XX的简历</title>
+  </head>
+  <body>
+    <@header />
+    
+    <div class="weui-cells weui-cells_form">
+      <div class="weui-cells__title">基本信息</div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" placeholder="请输入真实姓名">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__hd">
+	      <label class="weui-label">性别</label>
+	    </div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" id="isex" type="text">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__hd"><label for="" class="weui-label">出生日期</label></div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input date" type="text" id="birthday" value="1988-02-23">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__hd"><label for="" class="weui-label">现居城市</label></div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input city" type="text" id="now-city" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__hd"><label for="" class="weui-label">毕业院校</label></div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__hd"><label for="" class="weui-label">最高学历</label></div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" value="" placeholder="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__hd"><label for="" class="weui-label">毕业时间</label></div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input date" id="graduate-date" value="" placeholder="">
+	    </div>
+	  </div>
+    </div>
+    	
+	<div class="weui-cells__title">求职意向</div>
+	<div class="weui-cells">
+	  <div class="weui-cell">
+	    <div class="weui-cell__hd"><label for="" class="weui-label">工作性质</label></div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" id="work-nature" type="text" value="" placeholder="全职/兼职/临时工">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__hd"><label for="" class="weui-label">工作地点</label></div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input city" type="text" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__hd"><label for="" class="weui-label">期望薪资</label></div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__hd"><label for="" class="weui-label">工作状态</label></div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__hd"><label for="" class="weui-label">期望职位</label></div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__hd"><label for="" class="weui-label">行业类别</label></div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	</div>
+	
+	
+	<div class="weui-cells__title">工作经历</div>
+	<div class="weui-cells weui-cells_form">
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">公司名称</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">职位</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">工作时间</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input date" type="text" value="">
+	    </div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input date" type="text" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">获得荣誉</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">工作职责</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	</div>
+	<div class="weui-cells weui-cells_form">
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">公司名称</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">职位</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">工作时间</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input date" type="text" value="">
+	    </div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input date" type="text" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">获得荣誉</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">工作职责</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	</div>
+	
+	<div class="weui-cells__title">自我评价</div>
+	<div class="weui-cells">
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	</div>
+	
+	<div class="weui-cells__title">职业技能</div>
+	<div class="weui-cells weui-cells_form">
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">mysql</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="熟悉">
+	    </div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="3个月">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">JAVA</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="熟悉">
+	    </div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="10个月">
+	    </div>
+	  </div>
+	</div>
+	
+	<div class="weui-cells__title">项目经验</div>
+	<div class="weui-cells weui-cells_form">
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">项目名称</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">起止时间</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input date" type="text" value="2015-7-1">
+	    </div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input date" type="text" value="2016-7-1">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">项目职责</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">项目详情</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	</div>
+	<div class="weui-cells weui-cells_form">
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">项目名称</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">起止时间</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input date" type="text" value="2015-7-1">
+	    </div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input date" type="text" value="2016-7-1">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">项目职责</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">项目详情</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="">
+	    </div>
+	  </div>
+	</div>
+	
+	<div class="weui-cells__title">语言能力</div>
+	<div class="weui-cells weui-cells_form">
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">英语</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="熟练读">
+	    </div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="熟练写">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">德语</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="熟练读">
+	    </div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input" type="text" value="熟练写">
+	    </div>
+	  </div>
+	</div>
+	
+	<div class="weui-cells__title">所获证书</div>
+	<div class="weui-cells weui-cells_form">
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">CET-4</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input date" type="text" value="2009-07-22">
+	    </div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">SCJP</div>
+	    <div class="weui-cell__bd">
+	      <input class="weui-input date" type="text" value="2009-08-22">
+	    </div>
+	  </div>
+	</div>
+    
+    <div class="weui-cells__title">作品展示</div>
+    
+<script type="text/javascript" src="${BASE_URI!}/static/plugins/weui/city-picker.js" charset="utf-8"></script>
+<script>
+$("#isex").picker({
+  title: "请选择您的性别",
+  cols: [
+    {
+      textAlign: 'center',
+      values: ['男', '女']
+    }
+  ]
+});
+
+$("#work-nature").picker({
+  title: "请选择您的性别",
+  cols: [
+    {
+      textAlign: 'center',
+      values: ['全职', '兼职', '临时工']
+    }
+  ]
+});
+
+$(".date").calendar();
+$(".city").cityPicker({
+    title: "请选择现居城市",
+    showDistrict: false
+});
+</script>
+  </body>
+</html>

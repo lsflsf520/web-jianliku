@@ -4,27 +4,27 @@ body, html {
 }
 .base-title {
   text-align: center;
-  font-size: 34px;
+  font-size: 20px;
   color: #3cc51f;
   font-weight: 400;
   margin: 0 15%;
 }
 
-.demos-sub-title {
+.base-sub-title {
   text-align: center;
   color: #888;
   font-size: 14px;
 }
 
 .base-header {
-  padding: 35px 0;
+  padding: 2px 0;
 }
 
-.demos-content-padded {
+.base-content-padded {
   padding: 15px;
 }
 
-.demos-second-title {
+.base-second-title {
   text-align: center;
   font-size: 24px;
   color: #3cc51f;

@@ -19,5 +19,11 @@ public class UserCenterController {
 		
 		return new ModelAndView("uc/jianli_list");
 	}
+	
+	@RequestMapping("jianli/detail")
+	public ModelAndView jianliDetail(int jlId){
+		
+		return new ModelAndView("uc/jianli_detail");
+	}
 
 }

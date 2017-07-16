@@ -9,10 +9,10 @@
 
 <#macro nav activeIndex="0">
 <!-- 底层工具栏 -->
-<div class="weui-footer weui-footer_fixed-bottom">
-   <div class="weui-tabbar">
+<div class="weui-footer ">
+   <div class="weui-tabbar weui-footer_fixed-bottom">
 	  <a href="${BASE_URI}/index.do" class='weui-tabbar__item ${(((activeIndex)!"0") == "0")?string("weui-bar__item--on", "")}'>
-	    <span class="weui-badge" style="position: relative;top: -1.8em;right: -3em;">8</span>
+	    <span class="weui-badge" style="position: absolute;top: -.4em;right: 2.5em;">8</span>
 	    <div class="weui-tabbar__icon">
 	      <img src="${BASE_URI}/static/common/images/icon_nav_button.png" alt="">
 	    </div>
