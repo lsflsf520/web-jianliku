@@ -32,6 +32,28 @@ body, html {
   margin: 0 15%;
 }
 
+.bar .icon {
+  position: relative;
+  z-index: 20;
+  padding: .6rem .1rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  color: #FFF;
+}
+
+.pull-left {
+  float: left;
+  font-style:normal;
+}
+.pull-left:before {
+  content: "<返回";
+}
+
+.pull-right {
+  float: right;
+  font-style:normal;
+}
+
 footer {
   text-align: center;
   font-size: 14px;

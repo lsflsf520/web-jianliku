@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <#include "/common/headblock.html">
+    <title>登录</title>
+  </head>
+  <body>
+    <@header />
+    
+   <!--主体部分 开始-->
+    <div class="content">
+        <div class="content-block">
+            <div class="login_logo"> <!-- <img src="/Public/sstm/imagesm/member/login_logo.png"> --></div>
+            <form id="formyz"  action="" class="am-form" data-am-validator data-url="/register">
+                <input type="hidden" name="registeredtype" id="registeredtype" value="mobile"/>
+                <div class="weui-cells weui-cells_form">
+
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd">
+                            <label class="weui-label">手机</label>
+                        </div>
+                        <div class="weui-cell__bd weui-cell_primary">
+
+                            <input class="weui-input" type="text" name="mobnumber" minlength="4" id="mobnumber" placeholder="请输入手机号" required  check-type="mobile" check-url="/ucenter/member/checkaccount.html" onblur="checkaccount(this)"
+                                   placeholder="请输入手机号" .
+                            errormsg="请填写手机号" value="" name="username"/>
+
+                        </div>
+                    </div>
+                                        <div class="weui-cell">
+                        <div class="weui-cell__hd">
+                            <label class="weui-label">密码</label>
+                        </div>
+                        <div class="weui-cell__bd weui-cell_primary">
+                            <input class="weui-input" type="text" name="password" value="" placeholder="请输入至少6位密码" id="inputPassword" check-length="6,30">
+                        </div>
+                    </div>
+
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd">
+                            <label class="weui-label">昵称</label>
+                        </div>
+                        <div class="weui-cell__bd weui-cell_primary">
+                            <input class="weui-input" type="text" name="nickname" value="" placeholder="请输入昵称">
+                            <input id="name" type="hidden" name="role" value="1" placeholder="角色">
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-btn-area">
+                    <a class="weui-btn weui-btn_primary" id="confirm">提交注册</a> </div>
+            </form>
+            <div class="qifeng_p"><a href="/sys/port/tologin.do" style="float:right">登录已有账号</a></div>
+            <div class="quicklogin">
+                <div class="divider">其他登陆方式 </div>
+                <div class="weui-row weui-no-gutter">
+                    <div class="weui-col-33"><a href="#"><i class="sstfont sst-weixin"></i></a></div>
+                    <div class="weui-col-33"><a href="#"><i class="sstfont sst-qq"></i></a></div>
+                    <div class="weui-col-33"><a href="#"><i class="sstfont sst-weibo"></i></a></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function checkaccount(obj){
+                var url=$(obj).attr('check-url');
+                var type=$(obj).attr('check-type');
+                var value=$(obj).val();
+                if(value==''){
+                    $.toast('请输入手机号码')
+                }else{
+                    $.post(url,{type:type,account:value},function(a){                                                   $.toast(a.info)
+                    });
+                }}
+        </script>
+        <script>
+            $(function () {
+                $("[data-role='getVerify']").click(function () {
+                    var $this = $(this);
+                    var account = $("#mobnumber").val();
+                    var type = 'mobile';
+                    var verify =$("#reg_verify").val();
+                    var todo='register';/*todo20160526修改*/
+                    if(account == ''){
+                        $.toast('请输入手机号码');
+                        return false;
+                    }
+                    $.post("/ucenter/verify/sendverify.html", {
+                        account: account,
+                        type: type,
+                        action: 'member',
+                        verify:verify,
+                        todo:todo
+                    }, function (res) {
+                        if (res.status) {
+                            DecTime.obj = $this
+                            $this.time = "60";
+                            $(this).attr('disabled',true)
+                            DecTime.dec_time();
+                            $.toast(res.info);
+                        }
+                        else {
+                            $.toast(res.info);
+                        }
+                    })
+                })
+            })
+            var DecTime = {
+                obj:0,
+                time:0,
+                dec_time : function(){
+                    if(this.time > 0){
+                        this.obj.text(this.time--+'S')
+                        setTimeout("DecTime.dec_time()",1000)
+                    }else{
+                        this.obj.text("验证手机")
+                        this.obj.attr('disabled',false)
+                    }
+
+                }
+            }
+            $('#confirm').click(function () {
+                var data = $("#formyz").serialize();
+                var url = $("#formyz").attr('data-url');
+                $.post(url, data, function (msg) {
+                    if (msg.status == 1) {
+                        $.toast(msg.info);
+                        setTimeout(function () {
+                            location.href = msg.url;
+                        }, 1000);
+                    } else {
+
+                        $.toast(msg.info);
+                    }
+                }, 'json');
+            });
+        </script>
+
+        <script>
+            // 验证密码长度
+            $(function(){
+                $('#inputPassword').after('<div class=" show_info" ></div>');
+                $('#inputPassword').blur(function(){
+                    var obj =$('#inputPassword');
+                    var str =  obj.val().replace(/\s+/g, "");
+                    var html = '';
+                    if (str.length == 0) {
+                        $.toast('请输入密码');
+                    } else {
+                        if (typeof (obj.attr('check-length')) != 'undefined') {
+                            var strs = new Array(); //定义一数组
+                            strs = obj.attr('check-length').split(","); //字符分割
+                            if (strs[1]) {
+                                if (strs[1] < str.length || str.length < strs[0]) {
+                                    $.toast('密码长度最低6位');
+                                }
+                            }
+                            else {
+                                if (strs[0] < str.length) {
+                                    $.toast('密码长度最低6位');
+                                }
+                            }
+                        }
+                    }
+                })
+            })
+
+        </script>
+    </div>
+
+
+    <!--主体部分 结束-->
+
+
+
+   <@nav />
+      
+  </body>
+</html>

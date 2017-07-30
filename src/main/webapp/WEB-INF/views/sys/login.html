@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <#include "/common/headblock.html">
+    <title>登录</title>
+  </head>
+  <body>
+    <@header />
+    
+   <div class="content">
+        <div class="content-block">
+            <div class="login_logo"><!--  <img src="/Public/sstm/imagesm/member/login_logo.png"> --></div>
+
+            <form method="post" data-url="/login" id="formlogin">
+                <div class="weui-cells weui-cells_form">
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd">
+                            <label class="weui-label">手机</label>
+                        </div>
+                        <div class="weui-cell__bd weui-cell_primary">
+                            <input class="weui-input" type="text" placeholder="请输入手机号" name="username" id="text" value="">
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd">
+                            <label class="weui-label">密码</label>
+                        </div>
+                        <div class="weui-cell__bd weui-cell_primary">
+                            <input class="weui-input" placeholder="请输入密码" type="password" name="password" id="password" value="">
+                        </div>
+                    </div>
+                                        <input name="from" type="hidden" value="">
+                </div>
+            </form>
+
+            <div class="weui-btn-area">
+                <a class="weui-btn weui-btn_primary" id="conf">登录</a>
+                <a href="/sys/port/toreg.do" class="weui-btn weui-btn_default">注册</a>
+            </div>
+
+            <script>
+                var verifyimg = $("#verifyimg").attr("src");
+                $("#verifyimg").click(function () {
+                    if (verifyimg.indexOf('?') > 0) {
+                        $("#verifyimg").attr("src", verifyimg + '&random=' + Math.random());
+                    } else {
+                        $("#verifyimg").attr("src", verifyimg.replace(/\?.*$/, '') + '?' + Math.random());
+                    }
+                });
+
+                $('#conf').click(function () {
+                    var data = $("#formlogin").serialize();
+                    var url = $("#formlogin").attr('data-url');
+                    $.post(url, data, function (msg) {
+
+                        if (msg.status == 1) {
+                            $.toast(msg.info);
+                            setTimeout(function () {
+                                location.href = msg.url;
+                            }, 200);
+                        } else {
+                            $.toast(msg.info);
+                        }
+                    }, 'json');
+                })
+            </script>
+            <div class="qifeng_p"><a href="#" style="float:right">忘记密码？</a></div>
+            <div class="quicklogin">
+                <div class="divider">其他登陆方式 </div>
+                <div class="weui-row weui-no-gutter">
+                    <div class="weui-col-33"><a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1e45fafc319c4524&redirect_uri=http%3A%2F%2Fm.shensuantang.com%2Fweixin%2Findex%2Fcallback.html&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect" data-f="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1e45fafc319c4524&redirect_uri=http%3A%2F%2Fm.shensuantang.com%2Fweixin%2Findex%2Fcallback.html&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect"><i class="sstfont sst-weixin"></i>
+                    </a></div>
+                    <div class="weui-col-33"><a href="#"><i class="sstfont sst-qq"></i>
+                    </a></div>
+                    <div class="weui-col-33"><a href="#"><i class="sstfont sst-weibo"></i>
+                    </a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--主体部分 结束-->
+
+
+   <@nav />
+      
+  </body>
+</html>

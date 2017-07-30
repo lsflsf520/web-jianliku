@@ -8,10 +8,15 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("sys/port")
 public class PassportController {
 
-	@RequestMapping("sys/tologin")
+	@RequestMapping("tologin")
 	public ModelAndView tologin(){
 		
 		return new ModelAndView("sys/login");
 	}
 	
+	@RequestMapping("toreg")
+	public ModelAndView toreg(){
+		
+		return new ModelAndView("sys/reg");
+	}
 }
