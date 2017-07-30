@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <#include "/common/headblock.html">
+    <title>余额：100￥</title>
+  </head>
+  <body>
+    <@header left="<a href='javascript:;' onclick='javascript:history.back(-1);' class='icon pull-left' style='width:100px;'><i class='base-title'></i></a>" />
+    
+    <div class="weui-form-preview">
+      <div class="weui-form-preview__ft">
+	    <a class="weui-form-preview__btn weui-form-preview__btn_default" href="javascript:">充值</a>
+	    <button type="submit" class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">提现</button>
+	  </div>
+    </div>
+    
+    <div class="weui-cells" id="comms">
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">
+	      <p>分佣:6.00￥</p>
+	    </div>
+	    <div class="weui-cell__ft">2017-07-09 15:13:14</div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">
+	      <p>充值:100.00￥</p>
+	    </div>
+	    <div class="weui-cell__ft">2017-07-09 15:13:14</div>
+	  </div>
+	  <div class="weui-cell">
+	    <div class="weui-cell__bd">
+	      <p>支付:6.00￥</p>
+	    </div>
+	    <div class="weui-cell__ft">2017-07-09 15:13:14</div>
+	  </div>
+    </div>
+    
+    <div class="weui-loadmore">
+      <i class="weui-loading"></i>
+      <span class="weui-loadmore__tips">正在加载</span>
+    </div>
+    
+    <div id="model" style="display:none;">
+         <div class="weui-cell__bd">
+          <p>支付:6.00￥</p>
+          <p style="font-size: 13px;color: #888888;">时间：2017-07-09 15:13:14</p>
+        </div>
+    </div>
+	
+	<script>
+      var loading = false;
+      $(document.body).infinite().on("infinite", function() {
+        if(loading) return;
+        loading = true;
+        setTimeout(function() {
+          $("#comms").append($("#model").html());
+          loading = false;
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

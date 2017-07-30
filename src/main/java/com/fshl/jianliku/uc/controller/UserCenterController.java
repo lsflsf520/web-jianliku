@@ -26,4 +26,21 @@ public class UserCenterController {
 		return new ModelAndView("uc/jianli_detail");
 	}
 
+	@RequestMapping("comm/list")
+	public ModelAndView listComm(){
+		
+		return new ModelAndView("uc/comm_list");
+	}
+	
+	@RequestMapping("comm/detail")
+	public ModelAndView commDetail(int id){
+		
+		return new ModelAndView("uc/comm_detail");
+	}
+	
+	@RequestMapping("balance/list")
+	public ModelAndView listBalance(){
+		
+		return new ModelAndView("uc/balance_list");
+	}
 }
