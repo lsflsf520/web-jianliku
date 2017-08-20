@@ -299,6 +299,13 @@
     
     <div class="weui-cells__title">作品展示</div>
     
+	<div class="weui-footer ">
+      <div class="weui-tabbar weui-footer_fixed-bottom">
+         <a href="javascript:;" style="width:100%;margin-top:0px;" class="weui-btn weui-btn_primary">保存</a>
+	     <a href="javascript:;" style="width:100%;margin-top:0px;margin-left:2px;" id="priceBtn" class="weui-btn weui-btn_default">定价</a>
+      </div>
+    </div>
+    
 <script type="text/javascript" src="${BASE_URI!}/static/plugins/weui/city-picker.js" charset="utf-8"></script>
 <script>
 $("#isex").picker({
@@ -325,6 +332,13 @@ $(".date").calendar();
 $(".city").cityPicker({
     title: "请选择现居城市",
     showDistrict: false
+});
+
+$("#priceBtn").click(function(){
+	$.prompt("请给此简历定价(单位：元)，每天只能对价格修改一次", function(text) {
+		$.toast("输入的值为：" + text);
+	});
+	
 });
 </script>
   </body>
